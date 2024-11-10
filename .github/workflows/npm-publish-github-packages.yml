@@ -23,6 +23,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   publish-github:
+    needs: publish-npm
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -35,12 +36,20 @@ jobs:
         with:
           node-version: '18'
           registry-url: https://npm.pkg.github.com
-          scope: '@deadbot'
+          scope: '@deadbotgg'
       - name: install dependencies
         run: npm ci
       - name: build
         run: npm run build
+      - name: configure package for github registry
+        run: |
+          # Create a temporary package.json for GitHub packages
+          cp package.json package.json.npm
+          sed -i 's/@deadbot\/types/@deadbotgg\/types/g' package.json
+          sed -i 's/https:\/\/registry.npmjs.org/https:\/\/npm.pkg.github.com/g' package.json
       - name: publish to github packages
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: restore original package.json
+        run: mv package.json.npm package.json
