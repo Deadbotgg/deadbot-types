@@ -1,19 +1,46 @@
-name: 'publish npm'
+name: 'publish packages'
 
 on: push
 
 jobs:
-  publish:
+  publish-npm:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v2
-      - name: node
-        uses: actions/setup-node@v2
+        uses: actions/checkout@v3
+      - name: setup node
+        uses: actions/setup-node@v3
         with:
-          node-version: 12
+          node-version: '18'
           registry-url: https://registry.npmjs.org
-      - name: publish
+      - name: install dependencies
+        run: npm ci
+      - name: build
+        run: npm run build
+      - name: publish to npm
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
+  publish-github:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: https://npm.pkg.github.com
+          scope: '@deadbot'
+      - name: install dependencies
+        run: npm ci
+      - name: build
+        run: npm run build
+      - name: publish to github packages
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
