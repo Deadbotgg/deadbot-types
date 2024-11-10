@@ -20,3 +20,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./ability"), exports);
 __exportStar(require("./hero"), exports);
 __exportStar(require("./item"), exports);
+__exportStar(require("./localisation"), exports);
+__exportStar(require("./utils"), exports);
