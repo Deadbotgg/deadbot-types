@@ -142,6 +142,8 @@ export interface HeroData {
   in_development: boolean;
   /** Whether hero is disabled */
   is_disabled: boolean;
+  /** Is Available In Hero Labs */
+  in_hero_labs: boolean;
   /** Complexity rating (1-3) */
   complexity: number;
   /** Visual readability rating */
