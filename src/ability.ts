@@ -84,7 +84,7 @@ export interface AbilityStats {
 /** Converted ability data structure */
 export interface ConvertedAbility {
   /** Tooltip information */
-  tooltipDetails: AbilityTooltipSection[];
+  tooltipDetails: AbilityTooltipSection;
   /** Base statistics */
   stats: AbilityStats;
   /** Spirit scaling values */
