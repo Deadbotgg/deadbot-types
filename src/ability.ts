@@ -33,10 +33,6 @@ export interface AbilityTooltipProperty {
 
 /** Section in ability tooltip */
 export interface AbilityTooltipSection {
-  /** Section name */
-  name?: string;
-  /** Section description */
-  description: string;
   /** Section properties */
   properties: AbilityTooltipProperty[];
   /** Required upgrade */
@@ -83,6 +79,10 @@ export interface AbilityStats {
 
 /** Converted ability data structure */
 export interface ConvertedAbility {
+  /** Ability name */
+  name: string;
+  /** Ability description */
+  description: string;
   /** Tooltip information */
   tooltipDetails: AbilityTooltipSection;
   /** Base statistics */
