@@ -31,14 +31,25 @@ export interface AbilityTooltipProperty {
   data?: any;
 }
 
+/** */
+export interface AbilityUpgrade {
+  description: string;
+  [key: string]: any;
+}
 /** Section in ability tooltip */
 export interface AbilityTooltipSection {
+  /** Section name */
+  name?: string;
+  /** Section description */
+  description: string;
   /** Section properties */
   properties: AbilityTooltipProperty[];
   /** Required upgrade */
   upgradeRequired?: DataProperty;
   /** Basic properties */
   basicProperties?: AbilityTooltipProperty[];
+  /** Upgrades */
+  upgrades?: AbilityUpgrade[];
   /** Additional data */
   data?: any;
 }
