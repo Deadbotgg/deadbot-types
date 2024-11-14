@@ -1,6 +1,6 @@
 {
   "name": "@deadbot/types",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "TypeScript definitions for Deadbot data structures",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "husky"
   },
   "keywords": [
     "deadbot",
@@ -23,7 +24,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm --no-git-tag-version version patch && git add ."
+      "pre-commit": "npm --no-git-tag-version version patch && git add ./package.json"
     }
   },
   "repository": {
