@@ -24,7 +24,7 @@ export interface ShopData {
       slot: string;
       image: string;
       activation: string;
-      components?: { name: string; image: string }[];
+      components?: { key: string; name: string; image: string }[];
     }[]
   >;
   Tech: Record<
@@ -38,7 +38,7 @@ export interface ShopData {
       slot: string;
       image: string;
       activation: string;
-      components?: { name: string; image: string }[];
+      components?: { key: string; name: string; image: string }[];
     }[]
   >;
 }
