@@ -2,6 +2,7 @@ export interface ShopData {
   Weapon: Record<
     string,
     {
+      key: string;
       name: string;
       description: string;
       cost: string;
@@ -15,6 +16,7 @@ export interface ShopData {
   Armor: Record<
     string,
     {
+      key: string;
       name: string;
       description: string;
       cost: string;
@@ -28,6 +30,7 @@ export interface ShopData {
   Tech: Record<
     string,
     {
+      key: string;
       name: string;
       description: string;
       cost: string;
