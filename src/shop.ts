@@ -8,7 +8,7 @@ export interface ShopData {
       components?: { image: string }[];
     }[]
   >;
-  Vitality: Record<
+  Armor: Record<
     string,
     {
       name: string;
@@ -17,7 +17,7 @@ export interface ShopData {
       components?: { image: string }[];
     }[]
   >;
-  Spirit: Record<
+  Tech: Record<
     string,
     {
       name: string;
