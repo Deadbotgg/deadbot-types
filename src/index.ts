@@ -6,5 +6,5 @@ export * from './ability';
 export * from './hero';
 export * from './item';
 export * from './localisation';
+export * from './shop';
 export * from './utils';
-
