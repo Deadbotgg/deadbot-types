@@ -11,6 +11,7 @@ export interface ShopData {
       image: string;
       activation: string;
       components?: { name: string; image: string }[];
+      disabled: boolean;
     }[]
   >;
   Armor: Record<
@@ -25,6 +26,7 @@ export interface ShopData {
       image: string;
       activation: string;
       components?: { key: string; name: string; image: string }[];
+      disabled: boolean;
     }[]
   >;
   Tech: Record<
@@ -39,6 +41,7 @@ export interface ShopData {
       image: string;
       activation: string;
       components?: { key: string; name: string; image: string }[];
+      disabled: boolean;
     }[]
   >;
 }
