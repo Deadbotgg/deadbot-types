@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: '18'
           registry-url: https://registry.npmjs.org
+          scope: '@deadbotgg'
       - name: install dependencies
         run: npm ci
       - name: build
