@@ -3,37 +3,37 @@
  */
 
 /** Represents an item component */
-export interface ItemComponent {
+export type ItemComponent = {
   /** Component key/identifier */
   key: string;
   /** Component name */
   name: string;
   /** Component image path */
   image: string | null;
-}
+};
 
 /** Tooltip ability property for items */
-export interface ItemTooltipAbilityProperty {
+export type ItemTooltipAbilityProperty = {
   /** Property value */
   value: number;
   /** CSS style class */
   style: string | null;
   /** Whether property is negative */
   is_negative: boolean;
-}
+};
 
 /** Important ability property in item tooltip */
-export interface ItemTooltipImportantProperty {
+export type ItemTooltipImportantProperty = {
   /** Property value */
   value: number;
   /** CSS style class */
   style: string | null;
   /** Whether property is conditional */
   is_conditional: boolean;
-}
+};
 
 /** Section in item tooltip */
-export interface ItemTooltipSection {
+export type ItemTooltipSection = {
   /** Regular ability properties */
   ability_properties: {
     [key: string]: {
@@ -60,10 +60,10 @@ export interface ItemTooltipSection {
   };
   /** Section description */
   description: string;
-}
+};
 
 /** Complete item data structure */
-export interface ItemData {
+export type ItemData = {
   /** Item name */
   name: string | null;
   /** Item description */
@@ -117,5 +117,12 @@ export interface ItemData {
   /** Weapon power bonus */
   weapon_power: number;
   /** Additional properties */
-  [key: string]: string | number | boolean | string[] | null | { [key: string]: ItemTooltipSection[] } | ItemComponent[];
-}
+  [key: string]:
+    | string
+    | number
+    | boolean
+    | string[]
+    | null
+    | { [key: string]: ItemTooltipSection[] }
+    | ItemComponent[];
+};

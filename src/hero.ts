@@ -5,7 +5,7 @@
 import { ConvertedAbility } from './ability';
 
 /** Represents weapon statistics for a hero */
-export interface WeaponStats {
+export type WeaponStats = {
   /** Base damage per bullet */
   bullet_damage: number;
   /** Rounds fired per second */
@@ -50,35 +50,35 @@ export interface WeaponStats {
   weapon_description: string;
   /** Types/categories of the weapon */
   weapon_types?: string[];
-}
+};
 
 /** Spirit scaling values for hero abilities */
-export interface SpiritScaling {
+export type SpiritScaling = {
   [key: string]: number;
-}
+};
 
 /** Physical collision properties */
-export interface CollisionData {
+export type CollisionData = {
   /** Collision radius */
   radius: number;
   /** Collision height */
   height: number;
   /** Maximum step height */
   step_height: number;
-}
+};
 
 /** Movement-related properties */
-export interface MovementData {
+export type MovementData = {
   /** Movement speed while stealthed */
   stealth_speed: number;
   /** Distance footstep sounds travel */
   footstep_sound_distance: number;
   /** Time between step sounds */
   step_sound_time: number;
-}
+};
 
 /** Visual appearance settings */
-export interface VisualsData {
+export type VisualsData = {
   /** UI color in RGB format */
   ui_color: number[];
   /** Glow colors for different team states */
@@ -90,26 +90,26 @@ export interface VisualsData {
   };
   /** Skin index for the model */
   model_skin: number;
-}
+};
 
 /** Item slot configuration */
-export interface ItemSlotData {
+export type ItemSlotData = {
   /** Maximum purchases allowed per tier */
   max_purchases_per_tier: number[];
-}
+};
 
 /** Bonus received from purchases */
-export interface PurchaseBonus {
+export type PurchaseBonus = {
   /** Tier level */
   tier: number;
   /** Bonus value */
   value: number;
   /** Type of bonus */
   type: string;
-}
+};
 
 /** Stats display configuration */
-export interface StatsDisplayData {
+export type StatsDisplayData = {
   /** Header stats for health section */
   health_header_stats: string[];
   /** Stats for health section */
@@ -122,10 +122,10 @@ export interface StatsDisplayData {
   magic_header_stats: string[];
   /** Stats for magic section */
   magic_stats: string[];
-}
+};
 
 /** Complete hero data structure */
-export interface HeroData {
+export type HeroData = {
   /** Unique identifier */
   id: number;
   /** Whether recommended for new players */
@@ -202,4 +202,4 @@ export interface HeroData {
   };
   /** Stats display configuration */
   stats_display: StatsDisplayData;
-}
+};

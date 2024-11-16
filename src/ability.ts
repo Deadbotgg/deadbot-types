@@ -3,22 +3,22 @@
  */
 
 /** Represents a scaling function for abilities */
-export interface ScaleFunction {
+export type ScaleFunction = {
   /** Scale value */
   value: number;
   /** Type of scaling */
   type: string;
-}
+};
 
 /** Generic data property */
-export interface DataProperty {
+export type DataProperty = {
   /** Property name */
   name: string;
   [key: string]: any;
-}
+};
 
 /** Property displayed in ability tooltip */
-export interface AbilityTooltipProperty {
+export type AbilityTooltipProperty = {
   /** Property name */
   name: string;
   /** Whether upgrade is required */
@@ -29,15 +29,15 @@ export interface AbilityTooltipProperty {
   isShown?: boolean;
   /** Additional data */
   data?: any;
-}
+};
 
 /** */
-export interface AbilityUpgrade {
+export type AbilityUpgrade = {
   description: string;
   [key: string]: any;
-}
+};
 /** Section in ability tooltip */
-export interface AbilityTooltipSection {
+export type AbilityTooltipSection = {
   /** Section name */
   name?: string;
   /** Section description */
@@ -52,10 +52,10 @@ export interface AbilityTooltipSection {
   upgrades?: AbilityUpgrade[];
   /** Additional data */
   data?: any;
-}
+};
 
 /** Spirit scaling values for abilities */
-export interface AbilitySpiritScaling {
+export type AbilitySpiritScaling = {
   /** Damage scaling with spirit */
   damage_scaling?: number;
   /** Duration scaling with spirit */
@@ -64,10 +64,10 @@ export interface AbilitySpiritScaling {
   range_scaling?: number;
   /** Cooldown scaling with spirit */
   cooldown_scaling?: number;
-}
+};
 
 /** Base ability statistics */
-export interface AbilityStats {
+export type AbilityStats = {
   /** Base damage */
   damage?: number;
   /** Effect duration */
@@ -86,10 +86,10 @@ export interface AbilityStats {
   resource_cost?: number;
   /** Additional stats */
   [key: string]: any;
-}
+};
 
 /** Converted ability data structure */
-export interface ConvertedAbility {
+export type ConvertedAbility = {
   /** Ability name */
   name: string;
   /** Ability description */
@@ -100,4 +100,4 @@ export interface ConvertedAbility {
   stats: AbilityStats;
   /** Spirit scaling values */
   spirit_scaling?: AbilitySpiritScaling;
-}
+};

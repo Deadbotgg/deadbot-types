@@ -1,4 +1,4 @@
-export interface ShopData {
+export type ShopData = {
   Weapon: Record<
     string,
     {
@@ -44,4 +44,4 @@ export interface ShopData {
       disabled: boolean;
     }[]
   >;
-}
+};
