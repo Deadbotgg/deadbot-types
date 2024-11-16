@@ -41,12 +41,6 @@ jobs:
         run: npm ci
       - name: build
         run: npm run build
-      - name: configure package for github registry
-        run: |
-          # Create a temporary package.json for GitHub packages
-          cp package.json package.json.npm
-          sed -i 's/@deadbot\/types/@deadbotgg\/types/g' package.json
-          sed -i 's/https:\/\/registry.npmjs.org/https:\/\/npm.pkg.github.com/g' package.json
       - name: publish to github packages
         run: npm publish
         env:
