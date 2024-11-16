@@ -10,7 +10,7 @@ export type ShopData = {
       slot: string;
       image: string;
       activation: string;
-      components?: { name: string; image: string }[];
+      components?: { key: string; name: string; image: string }[];
       disabled: boolean;
     }[]
   >;
